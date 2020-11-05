@@ -11,6 +11,14 @@ WHERE genre LIKE "action" AND stock > 0; -- Kolla vilka actionfilmer som finns s
 
 SELECT order_id, Rentals.customer_id, Customers.username, Movies.movie_id, Movies.movie_title, Movies.Stock FROM Rentals
 JOIN Customers ON Rentals.customer_id = Customers.customer_id
+JOIN Movies ON Rentals.movie_id = Movies.movie_id; -- Kolla alla filmer som är uthyrda och vilka som har hyrt ut dom
+
+UPDATE customers
+SET username = 'IamHealerNow'
+WHERE customer_id = 5; -- Tankman13 vill byta användarnamn till 'IamHealerNow
+
+SELECT order_id, Rentals.customer_id, Customers.username, Movies.movie_id, Movies.movie_title, Movies.Stock FROM Rentals
+JOIN Customers ON Rentals.customer_id = Customers.customer_id
 JOIN Movies ON Rentals.movie_id = Movies.movie_id
 WHERE movie_title LIKE "Die Hard"; -- Kolla vilka som hyrt Die Hard
 
